@@ -10,6 +10,53 @@
 <body>
     <script>
 
+        var choices = ['ROCK', 'PAPER', 'SCISSORS']
+        var playerWin = 0
+        var computerWin = 0
+
+        // computer picks choice
+        function computerPlay() {
+            var computerChoice = choices[Math.floor(Math.random() * choices.length)]
+            console.log(computerChoice)
+            return computerChoice
+        }
+
+        // player picks choice
+        function playerPlay() {
+            var playerChoice = prompt("Enter Rock, Paper or Scissors: ")
+            console.log(playerChoice.toUpperCase())
+            return playerChoice
+        }
+
+        // starts a game round 
+        function gameRound(x, y) {
+            // if computer wins
+            if ((x == 'PAPER' && y == 'ROCK') ||
+                (x == 'ROCK' && y == 'SCISSORS') ||
+                (x == 'SCISSORS' && y == 'PAPER')) {
+                console.log("You LOSE! " + x + " beats " + y)
+                return computerWin++
+                // if player wins
+            } else if ((y == 'PAPER' && x == 'ROCK') ||
+                (y == 'ROCK' && x == 'SCISSORS') ||
+                (y == 'SCISSORS' && x == 'PAPER')) {
+                console.log("You WIN! " + y + " beats " + x)
+                return playerWin++
+                // if game is a draw
+            } else {
+                console.log("Game is a DRAW")
+            }
+        }
+
+        function game() {
+            gameRound(computerPlay(), playerPlay());
+            console.log("You've won: " + playerWin + " times. || The computer won: " + computerWin + " times.")
+        }
+
+        for (rounds = 0; rounds < 5; rounds++) {
+            game();
+        }
+
     </script>
 </body>
 
