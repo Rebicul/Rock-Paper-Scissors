@@ -13,7 +13,7 @@ Important note: you want to return the results of this function call, not consol
 
 const playerSelection = 'rock'
 const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))<code></pre>
+console.log(playRound(playerSelection, computerSelection))</code></pre>
 ​
 
 <li>Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end. You have not officially learned how to “loop” over code to repeat function calls… if you already know about loops from somewhere else (or if you feel like doing some more learning) feel free to use them. If not, don’t worry! Just call your playRound function 5 times in a row. Loops are covered in the next lesson.
